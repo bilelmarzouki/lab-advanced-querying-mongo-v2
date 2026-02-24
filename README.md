@@ -67,6 +67,8 @@ You already know how this goes, so let's start working:
 
 <details>
   <summary>Solution</summary>
+- MyQuery: `{name: 'Babelgum'}`
+- MyProjection: `{name: 1, _id: 0}`
 
 - Query: `{name: 'Babelgum'}`
 - Projection: `{name: 1, _id: 0}`
@@ -79,6 +81,9 @@ You already know how this goes, so let's start working:
 
 <details>
   <summary>Solution</summary>
+- MyQuery: `{number_of_employees: { $gt: 5000 }}`
+- MyLimit: `20`
+- Sort: `{number_of_employees: 1}`
 
 - Query: `{number_of_employees: { $gt: 5000 }}`
 - Limit: `20`
@@ -91,6 +96,8 @@ You already know how this goes, so let's start working:
 
 <details>
   <summary>Solution</summary>
+- myQuery: `{ founded_year: { $gte: 2000, $lte: 2005 } }`
+- myProjection: `{ name: 1, _id: 0, founded_year: 1 }`
 
 - Query: `{$and: [{founded_year: {$gte: 2000}}, {founded_year:{$lte: 2005}}]}`
 - Projection: `{name: 1, _id: 0, founded_year: 1}`
@@ -116,6 +123,7 @@ You already know how this goes, so let's start working:
 
 <details>
   <summary>Solution</summary>
+- MyQuery: `{partners: {$exists: false}}`
 
 - Query: `{partners: {$exists: false}}`
 
@@ -127,6 +135,7 @@ You already know how this goes, so let's start working:
 
 <details>
   <summary>Solution</summary>
+- MyQuery: `{category_code: null}`
 
 - Query: `{category_code: {$type: 'null'}}`
 
@@ -135,7 +144,7 @@ You already know how this goes, so let's start working:
 <br>
 
 7. Order all the companies by their IPO price in descending order.
-
+I dont have IPO in the data!!!
 <details>
   <summary>Solution</summary>
 
@@ -149,6 +158,9 @@ You already know how this goes, so let's start working:
 
 <details>
   <summary>Solution</summary>
+- myQuery : ``
+- mySort : `{number_of_employees: -1}`
+- myLimit : `10`
 
 - Query: `{ number_of_employees: { $exists: true } }`
 - Sort:  `{number_of_employees: -1}`
@@ -162,6 +174,8 @@ You already know how this goes, so let's start working:
 
 <details>
   <summary>Solution</summary>
+- myQuery:  `{$and: [{founded_month: {$gte: 7}},{founded_month: {$lte: 12}}]}`
+- Limit: `1000`
 
 - Query: `{founded_month: {$gte: 7}}`
 - Limit: `1000`
@@ -174,6 +188,9 @@ You already know how this goes, so let's start working:
 
 <details>
   <summary>Solution</summary>
+- myQuery: `{founded_day: {$lte: 7}}`
+- mySort: `{acquisition.price_amount: -1}`
+- myLimit: `10`
 
 - Query: `{founded_day: {$lte: 7}}`
 - Sort: `{'acquisition.price_amount': -1}`
@@ -191,6 +208,9 @@ For an extra challenge and additional practice, try the following queries:
 
 <details>
   <summary>Solution</summary>
+- Query: `{'acquisition.acquired_year': {$gt: 2010}}`
+- Projection: `{name: 1, acquisition: 1}`
+- Sort: `{'acquisition.price_amount': -1}`
 
 - Query: `{'acquisition.acquired_year': {$gt: 2010}}`
 - Projection: `{name: 1, acquisition: 1, _id: 0}`
